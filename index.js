@@ -1,6 +1,25 @@
 // TODO: Include packages needed for this application
 //Inquirer, FS, 
+const inquirer = require('inquirer');
+const fs = require('fs');
 // TODO: Create an array of questions for user input
+
+///code for string template literal
+///get
+///this
+///code
+///from
+///mini
+///project
+///(2:26pm)
+
+
+
+
+
+
+
+
 
 inquirer
   .prompt([
@@ -19,10 +38,14 @@ inquirer
         message: 'What is your GitHub username?',
         name: 'gitHub',
         },
-
         {
         type: 'input',
-        message: 'What is the title of your project?',
+        message: 'What is your link?',
+        name: 'link',
+        },
+        {
+        type: 'input',
+        message: 'What is the title of your new project?',
         name: 'title',
         },
         {
@@ -57,23 +80,27 @@ inquirer
         {
         type: 'list',
         message: 'Would you like to add a license?)
-        choices: [Public Domain, Permissive, LGPL, Copyleft, Proprietary]
+        choices: ['Public Domain', 'Permissive', 'LGPL', 'Copyleft', 'Proprietary']
         name: 'license',
         },
-
-
-
-
     );
-
-
-
-
-
   ])
 
 
-const questions = [];
+// const questions = [];   This code was given. DO I need it?
+
+///PROMISE: 1. call functSkeletonFromStringTempLiteral(answers)   (2:29)
+/// which creates the full STR TEmp Lit filled in with answers.
+
+  .then((answers)  =>  {
+    console.log(answers)
+    const readMeContent = generateReadMe(answers);
+
+    fs.writeFile('index.js', readMeContent, (err) =>
+    err ? console.log(err) :console.log('Nice Work! You have made the index.js!')
+    );
+  };
+});
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
