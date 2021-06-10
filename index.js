@@ -9,10 +9,10 @@ const { title } = require('process');
 
 
 
-const generateReadMe = (answers) =>
+const generateReadMe = (answers) => {
 //md text, template        ```````````````backticks  `(MD content)`
-
-`# ${answers.title}
+         ////add logic here for entire readme.md - may contributions
+return `# ${answers.title}
 
 ## Project Description
 ${answers.description}
@@ -22,16 +22,16 @@ ${answers.installation}
 ${answers.usage}
 ## Tests
 ${answers.tests}
-##About Designer
-### Name: ${answers.name}
-### Email: ${answers.email}
-### GitHub Username: ${answers.github}
-### GitHub Link: ${answers.link}
+### Designer Name    ${answers.name}
+### Email    ${answers.email}
+### GitHub Username    ${answers.github}
+### GitHub Link    ${answers.link}
 ## Would you like other developers to contribute to your work?
 ${answers.contributions}
-## License: ${answers.license}
+## License
+${answers.license}
 `
-
+}
 
 
 
@@ -72,27 +72,24 @@ inquirer
       message: 'Please provide instructions for someone to install the necessary programs to run your project.',
       name: 'installation',
     },
-    // {
-    //   type: 'input',
-    //   message: 'Please provide instructions and examples for use.  To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax
-    //   ```md
-    //   ![alt text](assets/images/screenshot.png)
-    //   ```',
-    //   name: 'usage',
-    // },
+    {
+      type: 'input',
+      message: 'Please provide explain how the project is intended to be used.',
+      name: 'usage',
+    },
     {
       type: 'confirm',
       message: 'Would you like to allow other developers to contribute to your project? Contributor Covenant',
       name: 'contributions',
-      default: true
+      default: true,
     },
 
- 
-    // {
-    //   type: 'list',
-    //   message: 'Have you created any tests you would like to make available to the user?',
-    //   name: 'tests',
-    // },
+     {
+      type: 'input',
+      message: 'Have you created any tests you would like to make available to the user?',
+      name: 'tests',
+      default: 'NPM',
+    },
     {
       name: 'license',
       type: 'list',
