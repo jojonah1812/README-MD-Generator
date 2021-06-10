@@ -2,39 +2,36 @@
 //Inquirer, FS, 
 const inquirer = require('inquirer');
 const fs = require('fs');
+const { title } = require('process');
 // TODO: Create an array of questions for user input
+// to test this new program, delete current README
+//TableContents - look at previous assignments readme files for instructions/examples on how to make one.
 
-
-// String.raw
 
 
 const generateReadMe = (answers) =>
-  `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <title>Document</title>
-</head>
-<body>
-  <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Hi! My name is ${answers.name}</h1>
-    <p class="lead">I am from ${answers.location}.</p>
-    <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
-    <ul class="list-group">
-      <li class="list-group-item">My GitHub username is ${answers.github}</li>
-      <li class="list-group-item">LinkedIn: ${answers.linkedin}</li>
-    </ul>
-  </div>
-</div>
-</body>
-</html>`;
+//md text, template        ```````````````backticks  `(MD content)`
 
+`# ${answers.title}
 
+## Project Description
+${answers.description}
+## Project Installation
+${answers.installation}
+## Instructions on how to use this application
+${answers.usage}
+## Tests
+${answers.tests}
+##About Designer
+### Name: ${answers.name}
+### Email: ${answers.email}
+### GitHub Username: ${answers.github}
+### GitHub Link: ${answers.link}
 
-
+## Would you like other developers to contribute to your work?
+${answers.contributions}
+## License: ${answers.license}
+`
 
 
 
@@ -77,51 +74,52 @@ inquirer
       name: 'installation',
     },
     // {
-      // type: 'input',
-      // message: 'Please provide instructions and examples for use.  To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-      // ```md
-      // ![alt text](assets/images/screenshot.png)
-      // ```',
-      // name: 'usage',
+    //   type: 'input',
+    //   message: 'Please provide instructions and examples for use.  To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax
+    //   ```md
+    //   ![alt text](assets/images/screenshot.png)
+    //   ```',
+    //   name: 'usage',
     // },
     {
       type: 'confirm',
       message: 'Would you like to allow other developers to contribute to your project? Contributor Covenant',
-      // (https://www.contributor-covenant.org/) 
+ 
       name: 'contributions',
+      default: true
     },
+
+ 
+    // {
+    //   type: 'list',
+    //   message: 'Have you created any tests you would like to make available to the user?',
+    //   name: 'tests',
+    // },
     {
-      type: 'list',
-      message: 'Have you created any tests you would like to make available to the user?',
-      name: 'tests',
-    },
-    {
+      name: 'license',
       type: 'list',
       message: 'Would you like to add a license?',
-      choices: ['Public Domain', 'Permissive', 'LGPL', 'Copyleft', 'Proprietary'],
-      name: 'license',
+      choices: [
+                "Apache",
+                "Academic",
+                "GNU",
+                "ISC",
+                "MIT",
+                "Mozilla",
+                "Open"
+      ]
     },
   ])
 
-
-// const questions = [];   This code was given. DO I need it?
-
 ///PROMISE
 // TODO: Create a function to write README file
-
+//after inq, take answers and make content of template(line90)
   .then((answers)  =>  {
-    console.log(answers)
+    console.log(answers);
+    //readMeContent is the template with answers from Inq.
     const readMeContent = generateReadMe(answers);
 // TODO: Create a function to initialize app
-    fs.writeFile('index.js', readMeContent, (err) =>
-    err ? console.log(err) :console.log('Nice Work! You have made the index.js!')
+    fs.writeFile('README.md', readMeContent, (err) =>
+    err ? console.log(err) :console.log('Nice Work! You have made the README.md!')
     );
   });
-
-
-// });
-
-// function init() {}
-
-// Function call to initialize app
-init();
