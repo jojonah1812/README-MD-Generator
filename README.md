@@ -1,19 +1,18 @@
-# Genertaor
+# dfgh
 
 ## Project Description
-project to generate read me
+dfgh
 ## Project Installation
-install
+dfg
 ## Instructions on how to use this application
 undefined
 ## Tests
 undefined
 ##About Designer
-### Name: jo	
-### Email: jjo@jojo.com
+### Name: fgjh
+### Email: fgjh
 ### GitHub Username: undefined
-### GitHub Link: jo.com
-
+### GitHub Link: dfgh
 ## Would you like other developers to contribute to your work?
-undefined
-## License: undefined
+true
+## License: Academic

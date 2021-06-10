@@ -27,7 +27,6 @@ ${answers.tests}
 ### Email: ${answers.email}
 ### GitHub Username: ${answers.github}
 ### GitHub Link: ${answers.link}
-
 ## Would you like other developers to contribute to your work?
 ${answers.contributions}
 ## License: ${answers.license}
@@ -84,7 +83,6 @@ inquirer
     {
       type: 'confirm',
       message: 'Would you like to allow other developers to contribute to your project? Contributor Covenant',
- 
       name: 'contributions',
       default: true
     },
