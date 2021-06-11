@@ -14,22 +14,27 @@ const generateReadMe = (answers) => {
          ////add logic here for entire readme.md - may contributions
 return `# ${answers.title}
 
+
+
+### Designer Name
+* ${answers.name}
 ## Project Description
-${answers.description}
+* ${answers.description}
 ## Project Installation
-${answers.installation}
+* ${answers.installation}
 ## Instructions on how to use this application
-${answers.usage}
+* ${answers.usage}
 ## Tests
-${answers.tests}
-### Designer Name    ${answers.name}
-### Email    ${answers.email}
+* ${answers.tests}
+## Would you like other developers to contribute to your work?
+* ${answers.contributions}
+## License
+* ${answers.license}
+## Questions
+If you have any questions, please feel free to contact me through my GitHub account or my email address.
 ### GitHub Username    ${answers.github}
 ### GitHub Link    ${answers.link}
-## Would you like other developers to contribute to your work?
-${answers.contributions}
-## License
-${answers.license}
+### Email    ${answers.email}
 `
 }
 
@@ -104,6 +109,14 @@ inquirer
                 "Open"
       ]
     },
+    // {
+    //   type: 'input',
+    //   message: '',
+    //   name: 'questions',
+    // },
+ 
+ 
+ 
   ])
 
 ///PROMISE
