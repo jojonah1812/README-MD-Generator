@@ -1,40 +1,37 @@
-// TODO: Include packages needed for this application
-//Inquirer, FS, 
 const inquirer = require('inquirer');
 const fs = require('fs');
 const { title } = require('process');
-// TODO: Create an array of questions for user input
-// to test this new program, delete current README
-//TableContents - look at previous assignments readme files for instructions/examples on how to make one.
-
-
 
 const generateReadMe = (answers) => {
-//md text, template        ```````````````backticks  `(MD content)`
-         ////add logic here for entire readme.md - may contributions
 return `# ${answers.title}
-
-
 
 ### Designer Name
 * ${answers.name}
 ## Project Description
 * ${answers.description}
+# Table of Contents
+1. [Project Installation](#project-installation)
+2. [Instructions](#instructions-on-how-to-use-this-application)
+3. [Tests](#tests)
+4. [Contributions](#contributions)
+5. [License](#license)
+6. [Questions](#questions)
+
 ## Project Installation
 * ${answers.installation}
 ## Instructions on how to use this application
 * ${answers.usage}
 ## Tests
 * ${answers.tests}
-## Would you like other developers to contribute to your work?
+## Contributions
 * ${answers.contributions}
 ## License
 * ${answers.license}
 ## Questions
 If you have any questions, please feel free to contact me through my GitHub account or my email address.
-### GitHub Username    ${answers.github}
-### GitHub Link    ${answers.link}
-### Email    ${answers.email}
+* #### GitHub Username    ${answers.gitHub}
+* #### GitHub Link    ${answers.link}
+* #### Email    ${answers.email}
 `
 }
 
@@ -109,13 +106,6 @@ inquirer
                 "Open"
       ]
     },
-    // {
-    //   type: 'input',
-    //   message: '',
-    //   name: 'questions',
-    // },
- 
- 
  
   ])
 
@@ -131,3 +121,4 @@ inquirer
     err ? console.log(err) :console.log('Nice Work! You have made the README.md!')
     );
   });
+  // ![GitHub-license](https://img.shields.io/badge/license-ISC-blue.svg);
