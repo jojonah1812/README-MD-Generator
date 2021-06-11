@@ -35,8 +35,7 @@ If you have any questions, please feel free to contact me through my GitHub acco
 `
 }
 
-
-
+///Inquierer used to gather input from user
 inquirer
   .prompt([
     {
@@ -106,19 +105,15 @@ inquirer
                 "Open"
       ]
     },
- 
-  ])
+   ])
 
 ///PROMISE
-// TODO: Create a function to write README file
-//after inq, take answers and make content of template(line90)
   .then((answers)  =>  {
     console.log(answers);
     //readMeContent is the template with answers from Inq.
     const readMeContent = generateReadMe(answers);
-// TODO: Create a function to initialize app
+///Function to initialize
     fs.writeFile('README.md', readMeContent, (err) =>
     err ? console.log(err) :console.log('Nice Work! You have made the README.md!')
     );
   });
-  // ![GitHub-license](https://img.shields.io/badge/license-ISC-blue.svg);
