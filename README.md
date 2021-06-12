@@ -27,3 +27,7 @@ If you have any questions, please feel free to contact me through my GitHub acco
 * #### GitHub Username    jojonah1812
 * #### GitHub Link    https://github.com/jojonah1812
 * #### Email    jojonah@gmail.com
+
+## LINKS
+* GitHUb Repository: https://github.com/jojonah1812/README-MD-Generator.git
+* Walkthrough Video: https://drive.google.com/file/d/1H4Kv82CrVcNP5QakS_dfsC4_iW35xJH0/view
