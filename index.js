@@ -119,7 +119,7 @@ inquirer
     {
       type: "input",
       message: "GitHub Repository link?",
-      name: "gitHubLink",
+      name: "gitHubRepo",
     },
 
     {
