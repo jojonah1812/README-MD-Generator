@@ -6,7 +6,7 @@ const generateReadMe = (answers) => {
   return `# ${answers.title}
 
 ### Designer Name
-* ${answers.name}
+* Jonah Haase 
 ## Project Description
 * ${answers.description}
 # Table of Contents
@@ -39,35 +39,16 @@ const generateReadMe = (answers) => {
 
 ## Questions
 If you have any questions, please feel free to contact me through my GitHub account or my email address.
-* #### GitHub Username    ${answers.gitHub}
-* #### GitHub Link    ${answers.link}
-* #### Email    ${answers.email}
+* #### GitHub Username    jojonah1812
+* #### GitHub Link    https://github.com/jojonah1812
+* #### Email    jojonah@gmail.com
 `;
 };
 
 ///Inquierer used to gather input from user
 inquirer
   .prompt([
-    {
-      type: "input",
-      message: "What is your name?",
-      name: "name",
-    },
-    {
-      type: "input",
-      message: "What is your email address?",
-      name: "email",
-    },
-    {
-      type: 'input',
-      message: 'What is your GitHub username?',
-      name: 'gitHub',
-    },
-    {
-      type: "input",
-      message: "Link to your GitHub page?",
-      name: "link",
-    },
+    
     {
       type: "input",
       message: "What is the title of your new project?",
